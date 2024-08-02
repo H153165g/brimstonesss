@@ -58,7 +58,7 @@ function Skill() {
                     <Gai />
                 )}
             </div>
-            <img src={maps.find((item) => item.displayName === itemName)?.listViewIcon} alt={itemName} className="map-image"/>
+           
             <img src={maps.find((item) => item.displayName === itemName)?.displayIcon} alt={itemName} className="map-image"/>
             
             <div>
