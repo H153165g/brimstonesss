@@ -1,0 +1,69 @@
+/* brim.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #61dafb;
+}
+
+.app-container {
+    background-size: cover;
+    background-position: center top; /* 変更 */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 100px;
+    border-radius: 10px;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.ability-icon {
+    width: 150px; /* 固定幅 */
+    height: 150px; /* 固定高さ */
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    background-color: orange;
+    transition: transform 0.2s;
+}
+
+.ability-icon:hover {
+    transform: scale(1.1);
+}
+
+.img-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+pre {
+    text-align: left;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-width: 90%;
+    margin: 20px auto;
+}

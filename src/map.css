@@ -1,0 +1,57 @@
+/* brim.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #61dafb;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.maps {
+    width: 300px; /* 固定幅 */
+    height: 200px; /* 固定高さ */
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.maps:hover {
+    transform: scale(1.1);
+}
+
+.img-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.Incendiary {
+    width: 100px; /* 固定幅 */
+    height: 100px; /* 固定高さ */
+}
+
+pre {
+    text-align: left;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-width: 90%;
+    margin: 20px auto;
+}
