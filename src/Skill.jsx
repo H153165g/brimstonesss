@@ -45,8 +45,7 @@ function Skill() {
 
     return (
         <div>
-            <img src={maps.find((item) => item.displayName === itemName)?.splash} alt={itemName} className="map-image"/>
-            <h2>{itemName}</h2>
+           
             <div>
                 {a && brim ? (
                     brim.abilities.map((item, index) => (
@@ -59,6 +58,9 @@ function Skill() {
                     <Gai />
                 )}
             </div>
+            <img src={maps.find((item) => item.displayName === itemName)?.listViewIcon} alt={itemName} className="map-image"/>
+            <img src={maps.find((item) => item.displayName === itemName)?.displayIcon} alt={itemName} className="map-image"/>
+            
             <div>
                 <h3>Brimstone:</h3>
                 <pre>{JSON.stringify(brim, null, 2)}</pre>
