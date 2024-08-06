@@ -70,8 +70,6 @@ function Map() {
                 )}
             </div>
             <div>
-                <h3>Brimstone:</h3>
-                <pre>{JSON.stringify(brim, null, 2)}</pre>
             </div>
         </div>
     );

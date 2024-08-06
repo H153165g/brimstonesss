@@ -9,6 +9,7 @@ function Skill() {
     const [maps, setMaps] = useState([]);
     const [brim, setBrim] = useState(null);
     const [a, setA] = useState(false);
+    const [clickCoordinates, setClickCoordinates] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         const fetchMaps = async () => {
@@ -36,6 +37,15 @@ function Skill() {
         setA(true);
     }, []);
 
+    const handleSvgClick = (event) => {
+        const svg = event.currentTarget;
+        const point = svg.createSVGPoint();
+        point.x = event.clientX;
+        point.y = event.clientY;
+        const transformPoint = point.matrixTransform(svg.getScreenCTM().inverse());
+        setClickCoordinates({ x: transformPoint.x, y: transformPoint.y });
+    };
+
     const Gai = () => (
         <div className="img-container">
             <img src="https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/killfeedportrait.png" alt="Brimstone" className="maps" />
@@ -45,7 +55,6 @@ function Skill() {
 
     return (
         <div>
-           
             <div>
                 {a && brim ? (
                     brim.abilities.map((item, index) => (
@@ -58,12 +67,25 @@ function Skill() {
                     <Gai />
                 )}
             </div>
-           
-            <img src={maps.find((item) => item.displayName === itemName)?.displayIcon} alt={itemName} className="map-image"/>
-            
+            <svg width="1000" height="1000" onClick={handleSvgClick}>
+                <image
+                    xlinkHref={maps.find((item) => item.displayName === itemName)?.displayIcon}
+                    x="0"
+                    y="0"
+                    width="100%"
+                    height="100%"
+                    preserveAspectRatio="none"
+                    className="mapdata"
+                />
+                <rect x={Number(clickCoordinates.x)-5} y={Number(clickCoordinates.y)-5} width="10" height="10" fill="orange"></rect>
+            </svg>
+            <div>
+                <h3>Clicked Coordinates:</h3>
+                <p>X: {clickCoordinates.x}, Y: {clickCoordinates.y}</p>
+                
+            </div>
             <div>
                 <h3>Brimstone:</h3>
-                <pre>{JSON.stringify(brim, null, 2)}</pre>
             </div>
         </div>
     );
